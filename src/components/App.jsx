@@ -1,4 +1,5 @@
-import { Feedback } from './Feedback/Feedback'
+import { Feedback } from './Feedback/FeedBack'
+import IconTemplate from './Icons/IconTemplate';
 
 export const App = () => {
   return (
@@ -9,6 +10,7 @@ export const App = () => {
         bad={0}
       >
       </Feedback>
+      <IconTemplate />
     </>
   );
 };
