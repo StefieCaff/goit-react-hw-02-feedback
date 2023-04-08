@@ -1,7 +1,7 @@
-//import { Feedback } from './Feedback/Feedback';
+
 import { Logo, LogoTitle } from './Logo/Logo';
 import { Statistics } from './Statistics/Statistics';
-
+import { Feedback } from './Feedback/Feedback';
 export const App = () => {
   return (
     <> 
@@ -10,8 +10,10 @@ export const App = () => {
         height="50"
       />
       <LogoTitle />
-      {/* <Feedback/> */}
-      <Statistics/>
+      
+      <Statistics />
+      
+      <Feedback />
      
     </>
   );
