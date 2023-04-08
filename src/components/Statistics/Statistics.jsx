@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 
 import { icons } from '../../data/icons';
-import { Icon } from '../../assets/Icons';
+import { Icon } from '../Logo/Icons';
 
 export const Statistics = ({
     good = 0,

@@ -1,9 +1,5 @@
 import { PropTypes } from 'prop-types';
 
-import { icons } from '../../data/icons';
-import { Icon } from '../../assets/Icons';
-
-
 export const Feedback = ({
     good = 0,
     neutral = 0,
@@ -16,41 +12,23 @@ export const Feedback = ({
             <ul>
                 <li>
                     <button>
-                        <Icon>
-                        <div className="good">
-                           {icons.map((id) => {
-                               return <Icon key={id} id={id} />;
-                            })}
-                        </div>
-                        </Icon>
+                        
                     </button>
-                    <p>My coffee was good fire!</p>
+                    <p>My coffee was good, fire!</p>
                     <p>{good}</p>
                 </li>
                 <button>
-                    <Icon>
-                        <div className="neutral">
-                           {icons.map((id) => {
-                               return <Icon key={id} id={id} />;
-                            })}
-                        </div>
-                    </Icon>
+                    
                     </button>
-                    <p>My coffee was meh.</p>
+                    <p>My coffee was, meh.</p>
                     <p>{neutral}</p>
                 <li>
                 </li>
                 <li>
                     <button>
-                        <Icon>
-                            <div className="bad">
-                               {icons.map((id) => {
-                                   return <Icon key={id} id={id} />;
-                                })}
-                            </div>
-                        </Icon>
+                        
                     </button>
-                    <p>My coffee was bad stinky!</p>
+                    <p>My coffee was bad, stinky!</p>
                     <p>{bad}</p>
                 </li>
             </ul>

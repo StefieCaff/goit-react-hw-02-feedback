@@ -1,14 +1,14 @@
-import { Feedback } from './Feedback/Feedback'
+import sprite from '../images/icons.svg';
+
 
 export const App = () => {
   return (
-    <>
-      <Feedback
-        good={0}
-        neutral={0}
-        bad={0}
-      >
-      </Feedback>
+    <> 
+       <button>
+        <svg width="100" height="100">
+          <use href={`${sprite}#fire`}></use>
+         </svg>
+      </button>
     </>
   );
 };

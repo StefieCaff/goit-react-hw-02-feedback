@@ -2,5 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src", "public/Icons", "src/assets/Icons.jsx"]
+  "include": ["src", "public/Icons", "src/components/Logo/Icons.jsx"]
 }
