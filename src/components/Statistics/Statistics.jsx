@@ -4,46 +4,62 @@ import { SVG } from '../Logo/Icons';
 
 
 export const Statistics = ( props) => {
-//    const  {
-//     good = 0,
-//     neutral = 0,
-//     bad = 0,
-//     total = 0,
-//     positivePercentage = 0
-//     } = props;
+   const  {
+    good = 0,
+    neutral = 0,
+    bad = 0,
+    total = 0,
+    positivePercentage = 0
+    } = props;
 
     
     return (
         <div>
-            <h2>How peeps are voting on our espresso</h2>
+            <h2>Espresso experiences tally</h2>
             <ul>
-                <StatisticsItem
-                    message="My espresso was FIRE!"
-                    icon = "good-fire"
-                />
-                <StatisticsItem
-                    message="My espresso was MEH!"
-                    icon = "neutral-meh"
-                />
-                <StatisticsItem
-                    message="My espresso was STINKY!"
-                    icon = "bad-stinky"
-                />
+                <li>
+                    <StatisticsImg
+                        message="My espresso was, good-FIRE!"
+                        icon = "good-fire"
+                    />
+                    <p>{good}</p>
+                </li>
+                <li>
+                    <StatisticsImg
+                        message="My espresso was, MEH!"
+                        icon = "neutral-meh"
+                    />
+                    <p>{neutral}</p>
+                </li>
+                <li>
+                    <StatisticsImg
+                        message="My espresso was, bad-STINKY!"
+                        icon="bad-stinky"
+                    />
+                    <p>{bad}</p>
+                </li>
             </ul>
+            <div>
+                <p>
+                    {total}
+                </p>
+                <p>
+                    {positivePercentage}
+                </p>
+            </div>
         </div>
     );
 };
 
 
 
-const StatisticsItem = (props) => {
+const StatisticsImg = (props) => {
     const {
-        message = "your opinion matters to us!",
+        message = "We want your feedforward, thanks!",
         icon = "logo",
     } = props;
 
     return (
-        <li>
             <div>
                 <SVG
                     width = "200"
@@ -52,22 +68,21 @@ const StatisticsItem = (props) => {
                 />
                 <p>{message}</p>
             </div>
-        </li>
     );
     
 };
 
 
 
-// Statistics.propTypes = {
-//     good: PropTypes.number.isRequired,
-//     neutral: PropTypes.number.isRequired,
-//     bad: PropTypes.number.isRequired,
-//     total: PropTypes.number.isRequired,
-//     positivePercentage: PropTypes.number.isRequired,
-// };
+Statistics.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
+};
 
-StatisticsItem.propTypes = {
+StatisticsImg.propTypes = {
     message: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired
 }

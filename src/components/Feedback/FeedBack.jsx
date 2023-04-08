@@ -7,10 +7,10 @@ export const Feedback = () => {
 
     return (
         <div>
-            <h2>How was your espresso this time?!</h2>
+            <h2>How was your espresso?</h2>
             <ul>
                 <FeedbackItem
-                    message="My espresso was, FIRE!"
+                    message="My espresso was, good-FIRE!"
                     description="good"
                     icon = "fire"
                 />
@@ -20,7 +20,7 @@ export const Feedback = () => {
                     icon ="meh"
                 />
                 <FeedbackItem
-                    message="My espresso was bad, STINKY!"
+                    message="My espresso was, bad-STINKY!"
                     description="bad"
                     icon ="stinky"
                 />
@@ -31,7 +31,7 @@ export const Feedback = () => {
 
 const FeedbackItem = (props) => {
     const {
-        message = "your opinion matters to us!",
+        message = "We want your feedforward, thanks!",
         description = " good, neutral, or bad",
         icon = "logo",
     } = props;
