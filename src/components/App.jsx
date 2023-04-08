@@ -1,4 +1,4 @@
-import { Feedback } from './Feedback/Feedback';
+//import { Feedback } from './Feedback/Feedback';
 import { Logo, LogoTitle } from './Logo/Logo';
 import { Statistics } from './Statistics/Statistics';
 
@@ -10,7 +10,7 @@ export const App = () => {
         height="50"
       />
       <LogoTitle />
-      <Feedback></Feedback>
+      {/* <Feedback/> */}
       <Statistics/>
      
     </>
