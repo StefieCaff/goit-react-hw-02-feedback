@@ -1,44 +1,73 @@
 import { PropTypes } from 'prop-types';
+import { SVG } from '../Logo/Icons'
 
-export const Feedback = ({
-    good = 0,
-    neutral = 0,
-    bad = 0
-}) => {
+
+
+export const Feedback = () => {
 
     return (
         <div>
-            <h2>Espresso Cafe Customer FeedBack</h2>
+            <h2>How was your espresso this time?!</h2>
             <ul>
-                <li>
-                    <button>
-                        
-                    </button>
-                    <p>My coffee was good, fire!</p>
-                    <p>{good}</p>
-                </li>
-                <button>
-                    
-                    </button>
-                    <p>My coffee was, meh.</p>
-                    <p>{neutral}</p>
-                <li>
-                </li>
-                <li>
-                    <button>
-                        
-                    </button>
-                    <p>My coffee was bad, stinky!</p>
-                    <p>{bad}</p>
-                </li>
+                <FeedbackItem
+                    message="My espresso was, FIRE!"
+                    description="good"
+                    icon = "fire"
+                />
+                <FeedbackItem
+                    message="My espresso was, MEH."
+                    description="neutral"
+                    icon ="meh"
+                />
+                <FeedbackItem
+                    message="My espresso was bad, STINKY!"
+                    description="bad"
+                    icon ="stinky"
+                />
             </ul>
         </div>
+    );
+};
 
-    )
+const FeedbackItem = (props) => {
+    const {
+        message = "your opinion matters to us!",
+        description = " good, neutral, or bad",
+        icon = "logo",
+    } = props;
+
+    return (
+        <li>
+            <div>
+                <button>{description}
+                    <SVG
+                        width="100"
+                        height="100"
+                        name={icon}
+                    />
+                </button>
+            </div>
+            <div>
+                <p>{message}</p>
+            </div>
+        </li>
+    );
+};
+
+FeedbackItem.propTypes = {
+    description: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired
 }
 
-Feedback.propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-}
+// Feedback.propTypes = {
+//     good: PropTypes.number.isRequired,
+//     neutral: PropTypes.number.isRequired,
+//     bad: PropTypes.number.isRequired,
+// }
+
+// ({
+//     good = 0,
+//     neutral = 0,
+//     bad = 0
+// })

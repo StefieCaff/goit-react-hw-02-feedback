@@ -1,14 +1,18 @@
-import sprite from '../images/icons.svg';
-
+import { Feedback } from './Feedback/Feedback';
+import { Logo, LogoTitle } from './Logo/Logo';
+import { Statistics } from './Statistics/Statistics';
 
 export const App = () => {
   return (
     <> 
-       <button>
-        <svg width="100" height="100">
-          <use href={`${sprite}#fire`}></use>
-         </svg>
-      </button>
+       <Logo
+        width="50"
+        height="50"
+      />
+      <LogoTitle />
+      <Feedback></Feedback>
+      <Statistics/>
+     
     </>
   );
 };
