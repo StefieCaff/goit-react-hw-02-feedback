@@ -1,21 +1,15 @@
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 import { SVG } from '../Logo/Icons'
 
-const Logo = (props) => {
-    const {
-        width,
-        height,
-        name = "logo"
-    } = props;
-
+const Logo = () => {
+ 
     return (
         <div>
             <SVG
-                width = {width}
-                height = {height}
-                name = {name}
-            />
+            width = "25"
+            height = "25"
+            name = "logo" />
         </div>  
     );
    
@@ -25,16 +19,14 @@ const LogoTitle = () => {
 
     return (
         <div>
-            <SVG />
+            <SVG
+                width = "50"
+                height = "50"
+                name = "logo" 
+            />
             <p>Espresso Cafe</p>
         </div>
     );
 };
-
-Logo.propTypes = {
-    width: PropTypes.string,
-    height: PropTypes.string,
-    name: PropTypes.string
-}
 
 export  {Logo, LogoTitle }

@@ -15,25 +15,27 @@ export const Statistics = ( props) => {
     
     return (
         <div>
-            <h2>Espresso experiences tally</h2>
+            <h3>Espresso taste tally</h3>
+            <p>My espresso was:
+            </p>
             <ul>
                 <li>
                     <StatisticsImg
-                        message="My espresso was, good-FIRE!"
+                        message="Good-FIRE!"
                         icon = "good-fire"
                     />
                     <p>{good}</p>
                 </li>
                 <li>
                     <StatisticsImg
-                        message="My espresso was, MEH!"
+                        message="MEH!"
                         icon = "neutral-meh"
                     />
                     <p>{neutral}</p>
                 </li>
                 <li>
                     <StatisticsImg
-                        message="My espresso was, bad-STINKY!"
+                        message="Bad-STINKY!"
                         icon="bad-stinky"
                     />
                     <p>{bad}</p>
@@ -41,10 +43,7 @@ export const Statistics = ( props) => {
             </ul>
             <div>
                 <p>
-                    {total}
-                </p>
-                <p>
-                    {positivePercentage}
+                    Of <span>{total}</span> tallies, <span>{positivePercentage}</span>% are positive tallies, yay!
                 </p>
             </div>
         </div>
@@ -62,8 +61,8 @@ const StatisticsImg = (props) => {
     return (
             <div>
                 <SVG
-                    width = "200"
-                    height = "200"
+                    width = "50"
+                    height = "50"
                     name = {icon}
                 />
                 <p>{message}</p>

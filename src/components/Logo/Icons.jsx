@@ -3,8 +3,8 @@ import sprite from '../../images/icons.svg';
 
 export const SVG = (props) => {
 const {
-    width = "100",
-    height = "100",
+    width = "25",
+    height = "25",
     name = "logo"
 } = props
         
