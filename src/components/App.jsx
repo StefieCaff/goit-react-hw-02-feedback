@@ -12,12 +12,10 @@ export const App = () => {
   const [good, setGood] = useState(0);
   const [bad, setBad] = useState(0);
   const [neutral, setNeutral] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [positiveFeedback, setPositive] = useState(0);
   
   useEffect(() => {
     console.log("hooks!");
-  }, [good, bad, neutral, total, positiveFeedback]);
+  }, [good, bad, neutral,]);
 
   const countTotalFeedback = () => {
     return (good + bad + neutral);
@@ -31,10 +29,8 @@ export const App = () => {
     );
   };
 
-  const handleLeaveFeedback = (e) => {
-   
-     setGood (a => a + 1)
-     
+  const handleLeaveFeedback = () => {
+    setGood(a => a + 1);
   };
 
   return (
