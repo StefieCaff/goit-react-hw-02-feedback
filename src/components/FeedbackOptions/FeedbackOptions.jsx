@@ -3,31 +3,64 @@ import { SVG } from '../Logo/Icons'
 
 
  
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = (props) => {
+    const {
+        good = "good",
+        neutral= "neutral",
+        bad = "bad",
+        onGoodFeedback,
+        onNeutralFeedback,
+        onBadFeedback
+    } = props
 
     return (
         <div>
-            {Object.keys(options).map(option => (
-                <button
-                    key={option}
-                    type="button"
-                    name={option}
-                    onClick={ onLeaveFeedback }
-                >
-                    {option}
-                    <SVG
-                        width="25"
-                        height="25"
-                        name={option}
-                    />
-                </button>
-            ))}
+            <button
+                type="button"
+                name={good}
+                onClick={onGoodFeedback}
+            >
+                Good
+                <SVG
+                    width="25"
+                    height="25"
+                    name="good"
+                />
+            </button>
+            <button
+                type="button"
+                name={neutral}
+                onClick={onNeutralFeedback}
+            >
+                Meh
+                <SVG
+                    width="25"
+                    height="25"
+                    name="neutral"
+                />
+            </button>
+            <button
+                type="button"
+                name={bad}
+                onClick={onBadFeedback}
+            >
+                Bad
+                <SVG
+                    width="25"
+                    height="25"
+                    name="bad"
+                />
+            </button>
         </div>
     )
 };
 
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.object.isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    onGoodFeedback: PropTypes.func.isRequired,
+    onNeutralFeedback: PropTypes.func.isRequired,
+    onBadFeedback: PropTypes.func.isRequired
 };

@@ -9,52 +9,70 @@ import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
 
 
 export const App = () => {
-  const [good, setGood] = useState(0);
-  const [bad, setBad] = useState(0);
-  const [neutral, setNeutral] = useState(0);
+  const [feedback, setFeedback] = useState({ bad: 0, neutral: 0, good: 0 });
   
   useEffect(() => {
     console.log("hooks!");
-  }, [good, bad, neutral,]);
+  }, [feedback]);
+  
+  
 
   const countTotalFeedback = () => {
-    return (good + bad + neutral);
+    return (feedback.good + feedback.bad + feedback.neutral);
   }
 
   const countPositiveFeedbackPercentage = () => {
     return (
-    isNaN(Math.round((good / countTotalFeedback()) * 100))
+    isNaN(Math.round((feedback.good / countTotalFeedback()) * 100))
       ? 0
-        : Math.round((good / countTotalFeedback()) * 100)
+        : Math.round((feedback.good / countTotalFeedback()) * 100)
     );
   };
 
-  const handleLeaveFeedback = () => {
-    setGood(a => a + 1);
-  };
-
-  return (
-    <> 
-       <Logo/>
-      <LogoTitle/>
+  const handleGoodFeedback = event => {
+    setFeedback(prevFeedback => ({ ...prevFeedback, good: prevFeedback.good + 1}));
+  }
+  
+  const handleNeutralFeedback = event => {
+    setFeedback(prevFeedback => ({ ...prevFeedback, neutral: prevFeedback.neutral + 1}));
+  }
+ 
+  const handleBadFeedback = event => {
+    setFeedback(prevFeedback => ({ ...prevFeedback, bad: prevFeedback.bad + 1}));
+  }
+  
+  const total = countTotalFeedback()
+    return (
+      <> 
+        <Logo/>
+        <LogoTitle/>
       
-      <Section title="Add your tally, thanks!">
+        <Section title="How was your experience?">
         
-        <FeedbackOptions
-          options={{ good, bad, neutral }}
-          onLeaveFeedback={handleLeaveFeedback}
-        />
-      
-        <Notification message = "Let the tally begin! Woot!"/>
-      
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={countTotalFeedback()}
-          positivePercentage={countPositiveFeedbackPercentage()}
-        />
+          <FeedbackOptions
+            good={feedback.good}
+            neutral={feedback.neutral}
+            bad={feedback.bad}
+            onGoodFeedback={handleGoodFeedback}
+            onNeutralFeedback={handleNeutralFeedback}
+            onBadFeedback={handleBadFeedback}
+          />
+          {
+            total === 0
+              ? (
+                <Notification message = "Let the tally begin! Woot!"/>
+              )
+              :(
+                <Statistics
+                  good={feedback.good}
+                  neutral={feedback.neutral}
+                  bad={feedback.bad}
+                  total={countTotalFeedback()}
+                  positivePercentage={countPositiveFeedbackPercentage()}
+               />
+              )
+          }
         </Section>
-    </>
-  );
-  };
+      </>
+    );
+};
