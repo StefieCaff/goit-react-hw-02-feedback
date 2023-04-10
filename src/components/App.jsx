@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react"
 
 /* components/ styled Components */
-import { Logo, LogoTitle } from './Logo/Logo.jsx';
+import { LogoTitle } from './Logo/Logo.jsx';
 import { Section } from './Section/Section.jsx'
 import { Statistics } from './Statistics/Statistics.jsx';
 import { Notification } from './Notification/Notification.jsx';
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
 
-import { SectionWrapper } from '../components/Section/styled-section.js'
 
 export const App = () => {
   //set state
@@ -52,7 +51,7 @@ export const App = () => {
     return (
       <> 
         <LogoTitle />
-        <Section title="If you want, add a tally!">
+        <Section title="If you want, 'click' a tally">
           <FeedbackOptions
             good={feedback.good}
             neutral={feedback.neutral}
@@ -64,7 +63,7 @@ export const App = () => {
           {
             total === 0
               ? (
-                <Notification message = "Let the tally begin! Woot!"/>
+                <Notification message = "You'll be the first to add a tally. Woot!"/>
               )
               : (
                 <Statistics

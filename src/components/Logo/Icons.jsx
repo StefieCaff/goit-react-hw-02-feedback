@@ -9,7 +9,7 @@ const {
 } = props
         
     return (
-        <svg className="logo" width={width} height={height}>
+        <svg className="logo icon" width={width} height={height}>
             <use href={`${sprite}#${name}`}></use>
         </svg>
     )

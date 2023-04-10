@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
-import { SVG } from '../Logo/Icons'
+import { SVG } from '../Logo/Icons.jsx'
+import { Button, FeedbackWrapper } from '../FeedbackOptions/styled-feedback-options.js'
  
 export const FeedbackOptions = (props) => {
     const {
@@ -12,44 +13,46 @@ export const FeedbackOptions = (props) => {
     } = props
 
     return (
-        <div>
-            <button
+        <FeedbackWrapper>
+            <Button
                 type="button"
                 name={good}
                 onClick={onGoodFeedback}
+                className="good-hover"
             >
-                Good
                 <SVG
-                    width="25"
-                    height="25"
+                    width="40"
+                    height="40"
                     name="good"
                 />
-            </button>
-            <button
+                <span>Good</span>
+            </Button>
+            <Button
                 type="button"
                 name={neutral}
                 onClick={onNeutralFeedback}
+                className="neutral-hover"
             >
-                Meh
                 <SVG
-                    width="25"
-                    height="25"
+                    width="40"
+                    height="40"
                     name="neutral"
                 />
-            </button>
-            <button
+                <span>Meh</span>
+            </Button>
+            <Button
                 type="button"
                 name={bad}
                 onClick={onBadFeedback}
             >
-                Bad
                 <SVG
-                    width="25"
-                    height="25"
+                    width="40"
+                    height="40"
                     name="bad"
                 />
-            </button>
-        </div>
+                <span>Bad</span>
+            </Button>
+        </FeedbackWrapper>
     )
 };
 

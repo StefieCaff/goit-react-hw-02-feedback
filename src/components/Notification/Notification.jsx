@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import { Message } from './styled-notification'
 
 export const Notification = (props) => {
 
@@ -7,9 +7,9 @@ export const Notification = (props) => {
         message = "Be the first to add a tally! Woot!"
     } = props
     return (
-        <p>
+        <Message>
             {message}
-        </p>
+        </Message>
     );
 };
 
