@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-//import { countTotalFeedback, countPositiveFeedbackPercentage} from '../Utils/utils.js'
 
+/* components/ styled Components */
 import { Logo, LogoTitle } from './Logo/Logo.jsx';
 import { Section } from './Section/Section.jsx'
 import { Statistics } from './Statistics/Statistics.jsx';
@@ -9,18 +9,24 @@ import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
 
 
 export const App = () => {
+  //set state
   const [feedback, setFeedback] = useState({ bad: 0, neutral: 0, good: 0 });
   
-  useEffect(() => {
-    console.log("hooks!");
-  }, [feedback]);
+  // follow state changes
+  useEffect(() => {}, [feedback]);
   
+  /* helper functions*/
   
-
+  // calculate total tallies on state change
   const countTotalFeedback = () => {
     return (feedback.good + feedback.bad + feedback.neutral);
   }
 
+  // constant for notification logic
+
+  const total = countTotalFeedback()
+  
+  // calculate positive tallies on state change
   const countPositiveFeedbackPercentage = () => {
     return (
     isNaN(Math.round((feedback.good / countTotalFeedback()) * 100))
@@ -29,19 +35,19 @@ export const App = () => {
     );
   };
 
-  const handleGoodFeedback = event => {
+//event handlers
+  const handleGoodFeedback = e => {
     setFeedback(prevFeedback => ({ ...prevFeedback, good: prevFeedback.good + 1}));
   }
   
-  const handleNeutralFeedback = event => {
+  const handleNeutralFeedback = e => {
     setFeedback(prevFeedback => ({ ...prevFeedback, neutral: prevFeedback.neutral + 1}));
   }
  
-  const handleBadFeedback = event => {
+  const handleBadFeedback = e => {
     setFeedback(prevFeedback => ({ ...prevFeedback, bad: prevFeedback.bad + 1}));
   }
   
-  const total = countTotalFeedback()
     return (
       <> 
         <Logo/>
