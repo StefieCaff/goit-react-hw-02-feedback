@@ -7,6 +7,7 @@ import { Statistics } from './Statistics/Statistics.jsx';
 import { Notification } from './Notification/Notification.jsx';
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions.jsx";
 
+import { SectionWrapper } from '../components/Section/styled-section.js'
 
 export const App = () => {
   //set state
@@ -36,25 +37,22 @@ export const App = () => {
   };
 
 //event handlers
-  const handleGoodFeedback = e => {
+  const handleGoodFeedback = () => {
     setFeedback(prevFeedback => ({ ...prevFeedback, good: prevFeedback.good + 1}));
   }
   
-  const handleNeutralFeedback = e => {
+  const handleNeutralFeedback = () => {
     setFeedback(prevFeedback => ({ ...prevFeedback, neutral: prevFeedback.neutral + 1}));
   }
  
-  const handleBadFeedback = e => {
+  const handleBadFeedback = () => {
     setFeedback(prevFeedback => ({ ...prevFeedback, bad: prevFeedback.bad + 1}));
   }
   
     return (
       <> 
-        <Logo/>
-        <LogoTitle/>
-      
-        <Section title="How was your experience?">
-        
+        <LogoTitle />
+        <Section title="If you want, add a tally!">
           <FeedbackOptions
             good={feedback.good}
             neutral={feedback.neutral}
@@ -68,14 +66,14 @@ export const App = () => {
               ? (
                 <Notification message = "Let the tally begin! Woot!"/>
               )
-              :(
+              : (
                 <Statistics
                   good={feedback.good}
                   neutral={feedback.neutral}
                   bad={feedback.bad}
                   total={countTotalFeedback()}
                   positivePercentage={countPositiveFeedbackPercentage()}
-               />
+                  />
               )
           }
         </Section>

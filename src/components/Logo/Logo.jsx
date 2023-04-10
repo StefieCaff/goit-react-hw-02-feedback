@@ -1,16 +1,19 @@
-//import PropTypes from 'prop-types';
+import { SectionWrapperLogo, TitleTeardrop, Teardrop } from './styled-logo.js'
 
 import { SVG } from '../Logo/Icons'
 
 const Logo = () => {
  
     return (
-        <div>
-            <SVG
-            width = "25"
-            height = "25"
-            name = "logo" />
-        </div>  
+            <Teardrop>
+            <div>
+                <SVG
+                    width = "20"
+                    height = "20"
+                    name="logo"
+                />
+            </div>
+            </Teardrop> 
     );
    
 };
@@ -18,14 +21,18 @@ const Logo = () => {
 const LogoTitle = () => {
 
     return (
-        <div>
-            <SVG
-                width = "50"
-                height = "50"
-                name = "logo" 
-            />
-            <p>Espresso Cafe</p>
-        </div>
+        <SectionWrapperLogo>
+            <TitleTeardrop>
+            <div className="tear">
+                <SVG
+                    width = "50"
+                    height = "50"
+                    name="logo" 
+                />
+                <p className="logo-title">Espresso Cafe!</p>
+            </div>
+            </TitleTeardrop>
+        </SectionWrapperLogo>
     );
 };
 

@@ -1,7 +1,5 @@
 import { PropTypes } from 'prop-types';
 import { SVG } from '../Logo/Icons'
-
-
  
 export const FeedbackOptions = (props) => {
     const {

@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { SVG } from '../Logo/Icons';
-
+import { Logo } from '../Logo/Logo.jsx';
 
 
 export const Statistics = ( props) => {
@@ -15,7 +15,7 @@ export const Statistics = ( props) => {
     
     return (
         <div>
-            <h3>Espresso taste tally</h3>
+            <Logo/>
             <p>My espresso was:
             </p>
             <ul>
